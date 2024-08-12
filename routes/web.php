@@ -28,10 +28,10 @@ Route::get("/about", function(){
 
 
 Route::get("/categories", [CategoryController::class, 'index'])->name('categories');
-Route::get("/create-category", [CategoryController::class, 'create'])->name('create-category');
-Route::get("/single-category", [CategoryController::class, 'show'])->name('single-category');
-Route::get("/update-category", [CategoryController::class, 'edit'])->name('update-category');
-Route::get("/delete-category", [CategoryController::class, 'edit'])->name('delete-category');
+Route::post("/create-category", [CategoryController::class, 'create'])->name('create-category');
+Route::get("/single-category/{id}", [CategoryController::class, 'show'])->name('single-category');
+Route::put("/update-category/{id}", [CategoryController::class, 'edit'])->name('update-category');
+Route::delete("/delete-category/{id}", [CategoryController::class, 'edit'])->name('delete-category');
 
 
 
